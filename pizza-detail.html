@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Деталі піци - Bella Pizza</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">🍕 Bella Pizza</div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Меню</a></li>
+                    <li><a href="cart.html">Кошик <span class="cart-count" id="cartCount">0</span></a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="pizza-detail">
+            <div class="container">
+                <a href="index.html" class="back-link">← Назад до меню</a>
+                
+                <div class="detail-content">
+                    <div class="pizza-showcase">
+                        <img class="pizza-large-image" id="pizzaImage" alt="Піца">
+                        <div class="pizza-info-card">
+                            <h1 id="pizzaName"></h1>
+                            <p class="pizza-desc" id="pizzaDescription"></p>
+                            
+                            <div class="price-detail">
+                                <span class="price-label">Ціна:</span>
+                                <div class="price-display">
+                                    <span class="original-price" id="originalPrice"></span>
+                                    <span class="discounted-price" id="discountedPrice"></span>
+                                    <span class="discount-badge-large" id="discountBadge"></span>
+                                </div>
+                            </div>
+
+                            <div class="quantity-section">
+                                <label>Кількість:</label>
+                                <div class="quantity-picker">
+                                    <button onclick="decreaseQty()">−</button>
+                                    <input type="number" id="quantity" value="1" min="1" max="10">
+                                    <button onclick="increaseQty()">+</button>
+                                </div>
+                            </div>
+
+                            <div class="action-buttons">
+                                <button class="btn btn-primary btn-large" onclick="addCurrentPizzaToCart()">Додати в кошик</button>
+                                <button class="btn btn-secondary btn-large" onclick="history.back()">Назад</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ingredients-section">
+                        <h2>Інгредієнти</h2>
+                        <div class="ingredients-carousel">
+                            <div class="ingredients-container">
+                                <div class="ingredients-track" id="ingredientsTrack">
+                                    <!-- Інгредієнти загружаються динамічно -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Bella Pizza. Усі права захищені.</p>
+        </div>
+    </footer>
+
+    <script src="js/index.js"></script>
+    <script>
+        let currentPizza = null;
+
+        document.addEventListener('DOMContentLoaded', function() {
+            loadPizzaDetail();
+            updateCartCount();
+        });
+
+        async function loadPizzaDetail() {
+            try {
+                const urlParams = new URLSearchParams(window.location.search);
+                const pizzaId = parseInt(urlParams.get('id'));
+
+                const response = await fetch('data/pizzas.json');
+                const pizzas = await response.json();
+                
+                currentPizza = pizzas.find(p => p.id === pizzaId);
+                
+                if (!currentPizza) {
+                    document.querySelector('.detail-content').innerHTML = '<p>Піца не знайдена</p>';
+                    return;
+                }
+
+                displayPizzaDetail();
+                displayIngredients();
+                loadOptions();
+            } catch (error) {
+                console.error('Помилка при завантаженні:', error);
+            }
+        }
+
+        function displayPizzaDetail() {
+            const discountedPrice = Math.round(currentPizza.price * (1 - currentPizza.discount / 100));
+            
+            document.getElementById('pizzaImage').src = currentPizza.image;
+            document.getElementById('pizzaName').textContent = currentPizza.name;
+            document.getElementById('pizzaDescription').textContent = currentPizza.description;
+            
+            if (currentPizza.discount > 0) {
+                document.getElementById('originalPrice').textContent = currentPizza.price + ' грн';
+                document.getElementById('originalPrice').style.display = 'inline';
+                document.getElementById('discountedPrice').textContent = discountedPrice + ' грн';
+                document.getElementById('discountBadge').textContent = '-' + currentPizza.discount + '%';
+                document.getElementById('discountBadge').style.display = 'inline-block';
+            } else {
+                document.getElementById('originalPrice').style.display = 'none';
+                document.getElementById('discountedPrice').textContent = currentPizza.price + ' грн';
+                document.getElementById('discountBadge').style.display = 'none';
+            }
+        }
+
+        function displayIngredients() {
+            const track = document.getElementById('ingredientsTrack');
+            track.innerHTML = '';
+
+            currentPizza.ingredients.forEach((ingredient) => {
+                const card = document.createElement('div');
+                card.className = 'ingredient-card';
+                card.innerHTML = `
+                    <div class="ingredient-icon">${ingredient.icon}</div>
+                    <div class="ingredient-name">${ingredient.name}</div>
+                `;
+                track.appendChild(card);
+            });
+        }
+
+        function increaseQty() {
+            const qty = document.getElementById('quantity');
+            if (qty.value < 10) {
+                qty.value = parseInt(qty.value) + 1;
+            }
+        }
+
+        function decreaseQty() {
+            const qty = document.getElementById('quantity');
+            if (qty.value > 1) {
+                qty.value = parseInt(qty.value) - 1;
+            }
+        }
+
+        function addCurrentPizzaToCart() {
+            const quantity = parseInt(document.getElementById('quantity').value);
+            const size = document.getElementById('sizeSelect').selectedOptions[0].textContent;
+            const crust = document.getElementById('crustSelect').selectedOptions[0].textContent;
+            const selectedExtras = Array.from(document.querySelectorAll('#extrasList input:checked')).map(cb => cb.dataset.name);
+            
+            let cart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
+            
+            const existingItem = cart.find(item => item.id === currentPizza.id && item.size === size && item.crust === crust && JSON.stringify(item.extras) === JSON.stringify(selectedExtras));
+            if (existingItem) {
+                existingItem.quantity += quantity;
+            } else {
+                cart.push({
+                    id: currentPizza.id,
+                    quantity: quantity,
+                    size: size,
+                    crust: crust,
+                    extras: selectedExtras
+                });
+            }
+            
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            
+            showNotification(`${currentPizza.name} додана в кошик! (${quantity} шт.)`);
+        }
+
+        function showNotification(message) {
+            alert(message);
+        }
+
+        // Event listeners
+        document.getElementById('sizeSelect').addEventListener('change', updatePrice);
+        document.getElementById('crustSelect').addEventListener('change', updatePrice);
+        document.getElementById('extrasList').addEventListener('change', updatePrice);
+        document.getElementById('quantity').addEventListener('input', updatePrice);
+    </script>
+    </script>
+</body>
+</html>

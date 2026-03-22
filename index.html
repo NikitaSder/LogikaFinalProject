@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пiцерiя "Bella Pizza" - Меню</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">🍕 Bella Pizza</div>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Меню</a></li>
+                    <li><a href="cart.html">Кошик <span class="cart-count" id="cartCount">0</span></a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>🍕 Наше меню</h1>
+                <p>Вибірте вашу улюблену піцу</p>
+            </div>
+        </section>
+
+        <section class="menu-main">
+            <div class="container">
+                <div class="menu-controls">
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="Пошук піц...">
+                    </div>
+                    <div class="sort-box">
+                        <select id="sortSelect">
+                            <option value="name">За назвою (А-Я)</option>
+                            <option value="price-asc">За ціною (зростання)</option>
+                            <option value="price-desc">За ціною (спадання)</option>
+                            <option value="discount">З найбільшою знижкою</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="pizzas-grid" id="pizzasGrid">
+                    <!-- Загружаються динамічно -->
+                </div>
+            </div>
+        </section>
+
+        <section class="contact">
+            <div class="container">
+                <h2>Зв'язатися з нами</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="icon">📞</span>
+                        <p>+38 (050) 123-45-67</p>
+                    </div>
+                    <div class="contact-item">
+                        <span class="icon">📍</span>
+                        <p>вул. Головна, 123, Київ</p>
+                    </div>
+                    <div class="contact-item">
+                        <span class="icon">🕐</span>
+                        <p>Пн-Нд: 10:00 - 23:00</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Bella Pizza. Усі права захищені.</p>
+        </div>
+    </footer>
+
+    <script src="js/index.js"></script>
+    <script>
+        let allPizzas = [];
+        let filteredPizzas = [];
+
+        document.addEventListener('DOMContentLoaded', function() {
+            loadPizzas();
+            setupEventListeners();
+        });
+
+        async function loadPizzas() {
+            try {
+                const response = await fetch('data/pizzas.json');
+                allPizzas = await response.json();
+                filteredPizzas = [...allPizzas];
+                displayPizzas();
+            } catch (error) {
+                console.error('Помилка при завантаженні меню:', error);
+                document.getElementById('pizzasGrid').innerHTML = '<p>Помилка при завантаженні меню</p>';
+            }
+        }
+
+        function setupEventListeners() {
+            document.getElementById('searchInput').addEventListener('input', filterPizzas);
+            document.getElementById('sortSelect').addEventListener('change', sortPizzas);
+        }
+
+        function filterPizzas() {
+            const searchValue = document.getElementById('searchInput').value.toLowerCase();
+            filteredPizzas = allPizzas.filter(pizza => 
+                pizza.name.toLowerCase().includes(searchValue) ||
+                pizza.description.toLowerCase().includes(searchValue)
+            );
+            displayPizzas();
+        }
+
+        function sortPizzas() {
+            const sortValue = document.getElementById('sortSelect').value;
+            
+            switch(sortValue) {
+                case 'name':
+                    filteredPizzas.sort((a, b) => a.name.localeCompare(b.name, 'uk'));
+                    break;
+                case 'price-asc':
+                    filteredPizzas.sort((a, b) => a.price - b.price);
+                    break;
+                case 'price-desc':
+                    filteredPizzas.sort((a, b) => b.price - a.price);
+                    break;
+                case 'discount':
+                    filteredPizzas.sort((a, b) => b.discount - a.discount);
+                    break;
+            }
+            displayPizzas();
+        }
+
+        function displayPizzas() {
+            const container = document.getElementById('pizzasGrid');
+            container.innerHTML = '';
+
+            if (filteredPizzas.length === 0) {
+                container.innerHTML = '<p class="no-results">Піц не знайдено</p>';
+                return;
+            }
+
+            filteredPizzas.forEach(pizza => {
+                const card = createMenuPizzaCard(pizza);
+                container.appendChild(card);
+            });
+        }
+
+        function createMenuPizzaCard(pizza) {
+            const card = document.createElement('div');
+            card.className = 'pizza-card clickable';
+            card.style.cursor = 'pointer';
+            card.onclick = () => window.location.href = `pizza-detail.html?id=${pizza.id}`;
+            
+            const discountedPrice = Math.round(pizza.price * (1 - pizza.discount / 100));
+            
+            let priceHTML = '';
+            if (pizza.discount > 0) {
+                priceHTML = `
+                    <div class="price-section">
+                        <div class="price-row">
+                            <span class="original-price">${pizza.price} грн</span>
+                            <span class="discounted-price">${discountedPrice} грн</span>
+                        </div>
+                        <div class="discount-badge">-${pizza.discount}%</div>
+                    </div>
+                `;
+            } else {
+                priceHTML = `<div class="price-section"><div class="price">${pizza.price} грн</div></div>`;
+            }
+            
+            card.innerHTML = `
+                <img class="pizza-image" src="${pizza.image}" alt="${pizza.name}">
+                <h3>${pizza.name}</h3>
+                <p class="description">${pizza.description}</p>
+                ${priceHTML}
+                <div class="card-footer">
+                    <button class="btn btn-add" onclick="event.stopPropagation(); addToCart(${pizza.id})">Додати в кошик</button>
+                </div>
+            `;
+            
+            return card;
+        }
+    </script>
+</body>
+</html>

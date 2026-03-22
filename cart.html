@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пiцерiя "Bella Pizza" - Кошик</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">🍕 Bella Pizza</div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Меню</a></li>
+                    <li><a href="cart.html" class="active">Кошик <span class="cart-count" id="cartCount">0</span></a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="cart">
+            <div class="container">
+                <h1>Ваш кошик</h1>
+                
+                <div class="cart-content">
+                    <div class="cart-items" id="cartItems">
+                        <!-- Елементи кошика загружаються динамічно -->
+                    </div>
+                    
+                    <aside class="cart-summary">
+                        <h2>Підсумок замовлення</h2>
+                        <div class="summary-row">
+                            <span>Сума:</span>
+                            <span id="subtotal">0 грн</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Доставка:</span>
+                            <span id="delivery">50 грн</span>
+                        </div>
+                        <div class="summary-row discount-row">
+                            <span>Знижка:</span>
+                            <span id="discount">0 грн</span>
+                        </div>
+                        <div class="summary-row total">
+                            <strong>Усього:</strong>
+                            <strong id="total">0 грн</strong>
+                        </div>
+                        
+                        <div class="promo-code">
+                            <input type="text" id="promoCode" placeholder="Промокод">
+                            <button class="btn" onclick="applyPromo()">Застосувати</button>
+                        </div>
+                        
+                        <button class="btn btn-primary btn-checkout" onclick="checkout()">Оформити замовлення</button>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Bella Pizza. Усі права захищені.</p>
+        </div>
+    </footer>
+
+    <script src="js/index.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>
