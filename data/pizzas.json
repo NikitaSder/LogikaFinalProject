@@ -1,0 +1,504 @@
+[
+  {
+    "id": 1,
+    "name": "Гавайська",
+    "description": "Класична піца з ананасом, ветчиною та сиром",
+    "price": 200,
+    "discount": 0,
+    "image": "https://aleksandrsann.ks.ua/image/cache/catalog/pizza/updated/havaiian-700x700h.png.pagespeed.ce.bWSdzCraqH.png",
+    "ingredients": [
+      {"name": "Тісто", "icon": "🥖"},
+      {"name": "Соус томатний", "icon": "🍅"},
+      {"name": "Моцарела", "icon": "🧀"},
+      {"name": "Ветчина", "icon": "🍖"},
+      {"name": "Ананас", "icon": "🍍"},
+      {"name": "Базилік", "icon": "🌿"},
+      {"name": "Оливкова олія", "icon": "🫒"}
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Пепперончі",
+    "description": "Піца з гострою ковбасою пепперончі та сиром",
+    "price": 220,
+    "discount": 10,
+    "image": "https://aleksandrsann.ks.ua/image/cache/catalog/pizza/updated/peperoni-700x700h.png.pagespeed.ce.JMPOazs9yz.png",
+    "ingredients": [
+      {"name": "Тісто", "icon": "🥖"},
+      {"name": "Соус томатний", "icon": "🍅"},
+      {"name": "Пепперончі", "icon": "🌶️"},
+      {"name": "Моцарела", "icon": "🧀"},
+      {"name": "Пармезан", "icon": "🧀"},
+      {"name": "Орегано", "icon": "🌿"},
+      {"name": "Оливкова олія", "icon": "🫒"}
+    ]
+  },
+  {
+    "id": 3,
+    "name": "М'ясна",
+    "description": "Піца з різноманітним м'ясом: курка, бекон та ковбаса",
+    "price": 280,
+    "discount": 0,
+    "image": "https://aleksandrsann.ks.ua/image/cache/catalog/pizza/updated/bavarian-700x700h.png.pagespeed.ce.Y8hz8oJ8rL.png",
+    "ingredients": [
+      {"name": "Тісто", "icon": "🥖"},
+      {"name": "Соус томатний", "icon": "🍅"},
+      {"name": "Курка", "icon": "🍗"},
+      {"name": "Бекон", "icon": "🥓"},
+      {"name": "Ковбаса", "icon": "🌭"},
+      {"name": "Моцарела", "icon": "🧀"},
+      {"name": "Цибуля", "icon": "🧅"},
+      {"name": "Перець", "icon": "🫑"}
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Чотири сири",
+    "description": "Піца з чотирма видами сиру: моцарела, пармезан, горгонзола та фета",
+    "price": 260,
+    "discount": 15,
+    "image": "https://aleksandrsann.ks.ua/image/cache/catalog/pizza/updated/cheese-700x700h.png.pagespeed.ce.M5JuFKixro.png",
+    "ingredients": [
+      {"name": "Тісто", "icon": "🥖"},
+      {"name": "Соус вершковий", "icon": "🥛"},
+      {"name": "Моцарела", "icon": "🧀"},
+      {"name": "Пармезан", "icon": "🧀"},
+      {"name": "Горгонзола", "icon": "🧀"},
+      {"name": "Фета", "icon": "🧀"},
+      {"name": "Базилік", "icon": "🌿"}
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Гостра",
+    "description": "Піца з гострими інгредієнтами: перець чилі, цибуля та гриби",
+    "price": 240,
+    "discount": 0,
+    "image": "https://aleksandrsann.ks.ua/image/cache/catalog/pizza/updated/diablo-700x700h.png.pagespeed.ce.Ntj4Zxo2KG.png",
+    "ingredients": [
+      {"name": "Тісто", "icon": "🥖"},
+      {"name": "Соус томатний", "icon": "🍅"},
+      {"name": "Перець чилі", "icon": "🌶️"},
+      {"name": "Гриби", "icon": "🍄"},
+      {"name": "Цибуля", "icon": "🧅"},
+      {"name": "Моцарела", "icon": "🧀"},
+      {"name": "Оливки", "icon": "🫒"}
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Верона",
+    "description": "Піца з куркою, беконом та соусом барбекю",
+    "price": 270,
+    "discount": 20,
+    "image": "https://aleksandrsann.ks.ua/image/cache/catalog/pizza/updated/verona-700x700h.png.pagespeed.ce.iaYUIewYFi.png",
+    "ingredients": [
+      {"name": "Тісто", "icon": "🥖"},
+      {"name": "Соус барбекю", "icon": "🍯"},
+      {"name": "Курка", "icon": "🍗"},
+      {"name": "Бекон", "icon": "🥓"},
+      {"name": "Цибуля", "icon": "🧅"},
+      {"name": "Моцарела", "icon": "🧀"},
+      {"name": "Кукурудза", "icon": "🌽"}
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Де Люкс",
+    "description": "Піца з ветчиною, ананасом та різноманітними овочами",
+    "price": 250,
+    "discount": 5,
+    "image": "https://aleksandrsann.ks.ua/image/cache/catalog/pizza/updated/caorichioza-700x700h.png.pagespeed.ce._f6m1sVdZf.png",
+    "ingredients": [
+      {"name": "Тісто", "icon": "🥖"},
+      {"name": "Соус томатний", "icon": "🍅"},
+      {"name": "Ветчина", "icon": "🍖"},
+      {"name": "Ананас", "icon": "🍍"},
+      {"name": "Перець", "icon": "🫑"},
+      {"name": "Моцарела", "icon": "🧀"},
+      {"name": "Оливкова олія", "icon": "🫒"}
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Селянська",
+    "description": "Піца з беконом, яйцем та сиром, як у бабусі",
+    "price": 230,
+    "discount": 0,
+    "image": "https://aleksandrsann.ks.ua/image/cache/catalog/pizza/updated/carbonara-700x700h.png.pagespeed.ce.qyH8OfnnSz.png",
+    "ingredients": [
+      {"name": "Тісто", "icon": "🥖"},
+      {"name": "Соус томатний", "icon": "🍅"},
+      {"name": "Бекон", "icon": "🥓"},
+      {"name": "Яйце", "icon": "🥚"},
+      {"name": "Моцарела", "icon": "🧀"},
+      {"name": "Цибуля", "icon": "🧅"},
+      {"name": "Картопля", "icon": "🥔"}
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Маргарита",
+    "description": "Класична італійська піца з мінімумом інгредієнтів",
+    "price": 190,
+    "discount": 0,
+    "image": "https://aleksandrsann.ks.ua/image/cache/catalog/pizza/updated/margaritta-700x700h.png.pagespeed.ce.4z-A51Hrpm.png",
+    "ingredients": [
+      {"name": "Тісто", "icon": "🥖"},
+      {"name": "Соус томатний", "icon": "🍅"},
+      {"name": "Моцарела", "icon": "🧀"},
+      {"name": "Базилік", "icon": "🌿"},
+      {"name": "Оливкова олія", "icon": "🫒"}
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Вегетаріанська",
+    "description": "Піца для любителів овочів з різноманітними свіжими інгредієнтами",
+    "price": 210,
+    "discount": 10,
+    "image": "https://aleksandrsann.ks.ua/image/cache/catalog/pizza/updated/4-seasons-700x700h.png.pagespeed.ce.pF1QW4Uf2j.png",
+    "ingredients": [
+      {"name": "Тісто", "icon": "🥖"},
+      {"name": "Соус томатний", "icon": "🍅"},
+      {"name": "Перець", "icon": "🫑"},
+      {"name": "Гриби", "icon": "🍄"},
+      {"name": "Цибуля", "icon": "🧅"},
+      {"name": "Оливки", "icon": "🫒"},
+      {"name": "Моцарела", "icon": "🧀"},
+      {"name": "Броколі", "icon": "🥦"}
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Морська",
+    "description": "Піца з морепродуктами: тунець, креветки та кальмари",
+    "price": 300,
+    "discount": 0,
+    "image": "https://aleksandrsann.ks.ua/image/cache/catalog/sea-700x700h.png.pagespeed.ce.wJVKwjELU5.png",
+    "ingredients": [
+      {"name": "Тісто", "icon": "🥖"},
+      {"name": "Соус білий", "icon": "🥛"},
+      {"name": "Тунець", "icon": "🐟"},
+      {"name": "Креветки", "icon": "🦐"},
+      {"name": "Кальмари", "icon": "🐙"},
+      {"name": "Моцарела", "icon": "🧀"},
+      {"name": "Часник", "icon": "🧄"}
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Барбекю",
+    "description": "Піца з соусом барбекю, куркою та беконом",
+    "price": 275,
+    "discount": 15,
+    "image": "https://aleksandrsann.ks.ua/image/cache/catalog/pizza/updated/bbq-700x700h.png.pagespeed.ce.ZZzIyEXcjX.png",
+    "ingredients": [
+      {"name": "Тісто", "icon": "🥖"},
+      {"name": "Соус барбекю", "icon": "🍯"},
+      {"name": "Курка", "icon": "🍗"},
+      {"name": "Бекон", "icon": "🥓"},
+      {"name": "Цибуля", "icon": "🧅"},
+      {"name": "Моцарела", "icon": "🧀"},
+      {"name": "Кукурудза", "icon": "🌽"},
+      {"name": "Перець", "icon": "🫑"}
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Італійська",
+    "description": "Піца з салямі, артишоками та оливками в італійському стилі",
+    "price": 255,
+    "discount": 0,
+    "image": "https://aleksandrsann.ks.ua/image/cache/catalog/pizza/updated/caorichioza-700x700h.png.pagespeed.ce._f6m1sVdZf.png",
+    "ingredients": [
+      {"name": "Тісто", "icon": "🥖"},
+      {"name": "Соус томатний", "icon": "🍅"},
+      {"name": "Салямі", "icon": "🌭"},
+      {"name": "Артишоки", "icon": "🥬"},
+      {"name": "Оливки", "icon": "🫒"},
+      {"name": "Моцарела", "icon": "🧀"},
+      {"name": "Орегано", "icon": "🌿"}
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Грибна",
+    "description": "Піца з різноманітними грибами та сиром",
+    "price": 225,
+    "discount": 5,
+    "image": "https://aleksandrsann.ks.ua/image/cache/catalog/pizza/updated/chicken-mushroms-700x700h.png.pagespeed.ce.Cftp5ur6iQ.png",
+    "ingredients": [
+      {"name": "Тісто", "icon": "🥖"},
+      {"name": "Соус вершковий", "icon": "🥛"},
+      {"name": "Гриби", "icon": "🍄"},
+      {"name": "Цибуля", "icon": "🧅"},
+      {"name": "Моцарела", "icon": "🧀"},
+      {"name": "Пармезан", "icon": "🧀"},
+      {"name": "Часник", "icon": "🧄"},
+      {"name": "Петрушка", "icon": "🌿"}
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Капрічоза",
+    "description": "Піца з баликом, салямі та овочами",
+    "price": 353,
+    "discount": 0,
+    "image": "https://aleksandrsann.ks.ua/image/cache/catalog/pizza/updated/caorichioza-700x700h.png.pagespeed.ce._f6m1sVdZf.png",
+    "ingredients": [
+      {"name": "Тісто", "icon": "🥖"},
+      {"name": "Соус томатний", "icon": "🍅"},
+      {"name": "Балик", "icon": "🍖"},
+      {"name": "Салямі", "icon": "🌭"},
+      {"name": "Маслини", "icon": "🫒"},
+      {"name": "В'ялені томати", "icon": "🍅"},
+      {"name": "Шампіньйони", "icon": "🍄"},
+      {"name": "Моцарела", "icon": "🧀"}
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Крудо",
+    "description": "Піца з прошутто, грибами та яйцями",
+    "price": 389,
+    "discount": 10,
+    "image": "https://aleksandrsann.ks.ua/image/cache/catalog/pizza/updated/crudo-700x700h.png.pagespeed.ce.2dK0Ih9dW3.png",
+    "ingredients": [
+      {"name": "Тісто", "icon": "🥖"},
+      {"name": "Прошутто", "icon": "🍖"},
+      {"name": "Шампіньйони", "icon": "🍄"},
+      {"name": "Перепелині яйця", "icon": "🥚"},
+      {"name": "Руккола", "icon": "🥬"},
+      {"name": "Пармезан", "icon": "🧀"},
+      {"name": "Моцарела", "icon": "🧀"}
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Маринара",
+    "description": "Піца з рибою, шпинатом та томатами",
+    "price": 350,
+    "discount": 0,
+    "image": "https://aleksandrsann.ks.ua/image/cache/catalog/pizza/updated/neapol-700x700h.png.pagespeed.ce.cFV1A57kUf.png",
+    "ingredients": [
+      {"name": "Тісто", "icon": "🥖"},
+      {"name": "Риба", "icon": "🐟"},
+      {"name": "Шпинат", "icon": "🥬"},
+      {"name": "Томати", "icon": "🍅"},
+      {"name": "Моцарела", "icon": "🧀"},
+      {"name": "Соус вершковий", "icon": "🥛"}
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Папайя",
+    "description": "Піца з куркою, фетою та рукколою",
+    "price": 342,
+    "discount": 5,
+    "image": "https://aleksandrsann.ks.ua/image/cache/catalog/pizza/updated/papaya-700x700h.png.pagespeed.ce.pKuExHA2Kj.png",
+    "ingredients": [
+      {"name": "Тісто", "icon": "🥖"},
+      {"name": "Курка", "icon": "🍗"},
+      {"name": "Помідор черрі", "icon": "🍅"},
+      {"name": "Фета", "icon": "🧀"},
+      {"name": "Руккола", "icon": "🥬"},
+      {"name": "Моцарела", "icon": "🧀"},
+      {"name": "Бальзамічний оцет", "icon": "🍶"}
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Примавера",
+    "description": "Піца з грибами, овочами та шпинатом",
+    "price": 340,
+    "discount": 0,
+    "image": "https://aleksandrsann.ks.ua/image/cache/catalog/pizza/updated/4-seasons-700x700h.png.pagespeed.ce.pF1QW4Uf2j.png",
+    "ingredients": [
+      {"name": "Тісто", "icon": "🥖"},
+      {"name": "Гриби", "icon": "🍄"},
+      {"name": "Томати", "icon": "🍅"},
+      {"name": "Солодкий перець", "icon": "🫑"},
+      {"name": "Маслини", "icon": "🫒"},
+      {"name": "Шпинат", "icon": "🥬"},
+      {"name": "Моцарела", "icon": "🧀"}
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Екзотика",
+    "description": "Піца з салямі, ананасом та овочами",
+    "price": 344,
+    "discount": 10,
+    "image": "https://aleksandrsann.ks.ua/image/cache/catalog/pizza/exotica-700x700h.png.pagespeed.ce.DMWgmdxAzk.png",
+    "ingredients": [
+      {"name": "Тісто", "icon": "🥖"},
+      {"name": "Салямі", "icon": "🌭"},
+      {"name": "Радомер", "icon": "🧀"},
+      {"name": "Ананас", "icon": "🍍"},
+      {"name": "Цибуля маринована", "icon": "🧅"},
+      {"name": "Перець болгарський", "icon": "🫑"},
+      {"name": "Орегано", "icon": "🌿"},
+      {"name": "Моцарела", "icon": "🧀"},
+      {"name": "Шпинат", "icon": "🥬"}
+    ]
+  },
+  {
+    "id": 21,
+    "name": "4 сезони",
+    "description": "Піца з різноманітними інгредієнтами на чотири сектори",
+    "price": 341,
+    "discount": 0,
+    "image": "https://aleksandrsann.ks.ua/image/cache/catalog/pizza/updated/4-seasons-700x700h.png.pagespeed.ce.pF1QW4Uf2j.png",
+    "ingredients": [
+      {"name": "Тісто", "icon": "🥖"},
+      {"name": "Курка", "icon": "🍗"},
+      {"name": "Томати", "icon": "🍅"},
+      {"name": "Ветчина", "icon": "🍖"},
+      {"name": "Перець болгарський", "icon": "🫑"},
+      {"name": "Бекон", "icon": "🥓"},
+      {"name": "Гриби", "icon": "🍄"},
+      {"name": "Салямі", "icon": "🌭"},
+      {"name": "Маслини", "icon": "🫒"},
+      {"name": "Моцарела", "icon": "🧀"}
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Бальзамічна",
+    "description": "Піца з лососем, фетою та рукколою",
+    "price": 379,
+    "discount": 5,
+    "image": "https://aleksandrsann.ks.ua/image/cache/catalog/dishes/balzam-700x700h.png.pagespeed.ce.uNk2Hj9ToD.png",
+    "ingredients": [
+      {"name": "Тісто", "icon": "🥖"},
+      {"name": "Лосось", "icon": "🐟"},
+      {"name": "Помідор черрі", "icon": "🍅"},
+      {"name": "Фета", "icon": "🧀"},
+      {"name": "Руккола", "icon": "🥬"},
+      {"name": "Моцарела", "icon": "🧀"},
+      {"name": "Бальзамічний оцет", "icon": "🍶"}
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Гофредо",
+    "description": "Піца з баликом, салямі та соусом песто",
+    "price": 340,
+    "discount": 0,
+    "image": "https://aleksandrsann.ks.ua/image/cache/catalog/pizza/updated/hafredo-700x700h.png.pagespeed.ce._HetUUj21c.png",
+    "ingredients": [
+      {"name": "Тісто", "icon": "🥖"},
+      {"name": "Балик", "icon": "🍖"},
+      {"name": "Салямі пеппероні", "icon": "🌶️"},
+      {"name": "Радомер", "icon": "🧀"},
+      {"name": "Соус песто", "icon": "🌿"},
+      {"name": "Томати", "icon": "🍅"},
+      {"name": "Моцарела", "icon": "🧀"},
+      {"name": "Цибуля", "icon": "🧅"}
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Груша - Дорблю",
+    "description": "Піца з грушею, дорблю та медом",
+    "price": 362,
+    "discount": 10,
+    "image": "https://aleksandrsann.ks.ua/image/cache/catalog/grusha-dorblu,281,29-700x700h.png.pagespeed.ce.eYRD93Xjty.png",
+    "ingredients": [
+      {"name": "Тісто", "icon": "🥖"},
+      {"name": "Груша фламбована", "icon": "🍐"},
+      {"name": "Дорблю", "icon": "🧀"},
+      {"name": "Мед", "icon": "🍯"},
+      {"name": "Горіхи", "icon": "🥜"},
+      {"name": "Орегано", "icon": "🌿"},
+      {"name": "Моцарела", "icon": "🧀"},
+      {"name": "Соус вершковий", "icon": "🥛"}
+    ]
+  },
+  {
+    "id": 25,
+    "name": "Європейська",
+    "description": "Піца з м'ясом свинини та говядини",
+    "price": 356,
+    "discount": 0,
+    "image": "https://aleksandrsann.ks.ua/image/cache/catalog/pizza/updated/european-700x700h.png.pagespeed.ce.SB0O4Gw_FR.png",
+    "ingredients": [
+      {"name": "Тісто", "icon": "🥖"},
+      {"name": "М'ясо свинини", "icon": "🍖"},
+      {"name": "М'ясо говядини", "icon": "🥩"},
+      {"name": "Перець болгарський", "icon": "🫑"},
+      {"name": "Цибуля", "icon": "🧅"},
+      {"name": "Орегано", "icon": "🌿"},
+      {"name": "Моцарела", "icon": "🧀"}
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Монтебелло",
+    "description": "Піца з баликом, куркою та грибами",
+    "price": 346,
+    "discount": 5,
+    "image": "https://aleksandrsann.ks.ua/image/cache/catalog/pizza-700x700h.png.pagespeed.ce.dH2_mkKaA1.png",
+    "ingredients": [
+      {"name": "Тісто", "icon": "🥖"},
+      {"name": "Балик", "icon": "🍖"},
+      {"name": "Курка копчена", "icon": "🍗"},
+      {"name": "Білі гриби", "icon": "🍄"},
+      {"name": "Опята", "icon": "🍄"},
+      {"name": "Цибуля", "icon": "🧅"},
+      {"name": "Соус трюфельний", "icon": "🍄"},
+      {"name": "Моцарела", "icon": "🧀"}
+    ]
+  },
+  {
+    "id": 27,
+    "name": "Неаполь",
+    "description": "Піца з лососем, креветками та маслинами",
+    "price": 398,
+    "discount": 0,
+    "image": "https://aleksandrsann.ks.ua/image/cache/catalog/pizza/updated/neapol-700x700h.png.pagespeed.ce.cFV1A57kUf.png",
+    "ingredients": [
+      {"name": "Тісто", "icon": "🥖"},
+      {"name": "Лосось", "icon": "🐟"},
+      {"name": "Креветки", "icon": "🦐"},
+      {"name": "Маслини", "icon": "🫒"},
+      {"name": "Моцарела", "icon": "🧀"},
+      {"name": "Соус вершковий", "icon": "🥛"}
+    ]
+  },
+  {
+    "id": 28,
+    "name": "Сальмоне",
+    "description": "Піца з лососем, рикоттою та броколі",
+    "price": 428,
+    "discount": 10,
+    "image": "https://aleksandrsann.ks.ua/image/cache/catalog/pizza/updated/salmone-700x700h.png.pagespeed.ce.AR_zF1m74o.png",
+    "ingredients": [
+      {"name": "Тісто", "icon": "🥖"},
+      {"name": "Лосось с/с", "icon": "🐟"},
+      {"name": "Рикотта", "icon": "🧀"},
+      {"name": "Броколі", "icon": "🥦"},
+      {"name": "Лимон", "icon": "🍋"},
+      {"name": "Моцарела", "icon": "🧀"}
+    ]
+  },
+  {
+    "id": 29,
+    "name": "Піцбургер",
+    "description": "Піца з беконом, м'ясом та сиром чедер",
+    "price": 369,
+    "discount": 0,
+    "image": "https://aleksandrsann.ks.ua/image/cache/catalog/pizza/updated/pizburger-700x700h.png.pagespeed.ce.S6xLnaqIzN.png",
+    "ingredients": [
+      {"name": "Тісто", "icon": "🥖"},
+      {"name": "Бекон", "icon": "🥓"},
+      {"name": "М'ясо свинини", "icon": "🍖"},
+      {"name": "М'ясо говядини", "icon": "🥩"},
+      {"name": "Цибуля маринована", "icon": "🧅"},
+      {"name": "Сир чедер", "icon": "🧀"},
+      {"name": "Огірок маринований", "icon": "🥒"},
+      {"name": "Гірчиця", "icon": "🌭"}
+    ]
+  }
+]

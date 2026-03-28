@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Деталі піци - Bella Pizza</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">🍕 Bella Pizza</div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Меню</a></li>
+                    <li><a href="cart.html">Кошик <span class="cart-count" id="cartCount">0</span></a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="pizza-detail">
+            <div class="container">
+                <a href="index.html" class="back-link">← Назад до меню</a>
+                
+                <div class="detail-content">
+                    <div class="pizza-showcase">
+                        <img class="pizza-large-image" id="pizzaImage" alt="Піца">
+                        <div class="pizza-info-card">
+                            <h1 id="pizzaName"></h1>
+                            <p class="pizza-desc" id="pizzaDescription"></p>
+                            
+                            <div class="price-detail">
+                                <span class="price-label">Ціна:</span>
+                                <div class="price-display">
+                                    <span class="original-price" id="originalPrice"></span>
+                                    <span class="discounted-price" id="discountedPrice"></span>
+                                    <span class="discount-badge-large" id="discountBadge"></span>
+                                </div>
+                            </div>
+
+                            <div class="quantity-section">
+                                <label>Кількість:</label>
+                                <div class="quantity-picker">
+                                    <button onclick="decreaseQty()">−</button>
+                                    <input type="number" id="quantity" value="1" min="1" max="10">
+                                    <button onclick="increaseQty()">+</button>
+                                </div>
+                            </div>
+
+                            <div class="action-buttons">
+                                <button class="btn btn-primary btn-large" onclick="addCurrentPizzaToCart()">Додати в кошик</button>
+                                <button class="btn btn-secondary btn-large" onclick="history.back()">Назад</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ingredients-section">
+                        <h2>Інгредієнти</h2>
+                        <div class="ingredients-carousel">
+                            <div class="ingredients-container">
+                                <div class="ingredients-track" id="ingredientsTrack">
+                                    <!-- Інгредієнти загружаються динамічно -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Bella Pizza. Усі права захищені.</p>
+        </div>
+    </footer>
+
+    <script src="js/index.js"></script>
+    <script src="js/pizza_detal.js"></script>
+</body>
+</html>
